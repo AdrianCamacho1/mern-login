@@ -34,6 +34,12 @@ export async function registerValidation(values) {
     return errors;
 }
 
+/**validate profile page */
+export async function profileValidation(values){
+    const errors = emailVerify({}, values);
+    return errors;
+}
+
 
 
 /********************************************************************************* */
@@ -69,7 +75,7 @@ function usernameVerify (error = {}, values){
 }
 
 /** validate email */
-function emailVerify(errors = {}, values){
+function emailVerify(error = {}, values){
     if(!values.email){ // Check if the email field is empty
         error.email = toast.error("Email Required...!"); // If empty, set an error message using toast
     }else if (values.email.includes(" ")){ // Check if the email contains spaces
