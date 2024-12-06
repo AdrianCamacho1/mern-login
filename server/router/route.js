@@ -19,8 +19,8 @@ router.route('/createResetSession').get(controller.createResetSession) // reset 
 
 
 /** PUT METHODS */
-router.route('/updateuser').put(); // is used to update user profile
-router.route('/resetPassword').put(); // use to reset password
+router.route('/updateuser').put(controller.updateUser); // is used to update user profile
+router.route('/resetPassword').put(controller.resetPassword); // use to reset password
 
 
 export default router;
